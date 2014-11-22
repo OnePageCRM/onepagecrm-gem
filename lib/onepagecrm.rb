@@ -82,7 +82,6 @@ class Onepagecrm
     req.add_field('X-OnePageCRM-UID', @uid)
     req.add_field('X-OnePageCRM-TS', timestamp)
     req.add_field('X-OnePageCRM-Auth', token)
-    req.add_field('X-OnePageCRM-Source', 'lead_clip_chrome')
   end
 
   # Creates the token for X-OnePageCRM-Auth
