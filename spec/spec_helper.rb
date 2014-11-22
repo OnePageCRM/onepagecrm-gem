@@ -1,0 +1,2 @@
+require 'onepagecrm'
+require 'pry'
