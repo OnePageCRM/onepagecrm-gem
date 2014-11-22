@@ -5,7 +5,7 @@ require 'onepagecrm/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'onepagecrm'
-  spec.version       = Oneapgecrm::VERSION
+  spec.version       = Onepagecrm::VERSION
   spec.authors       = ['Peter Armstrong']
   spec.email         = ['peter@onepagecrm.com']
   spec.summary       = %q{Basic Gem for OnePageCRM.}
