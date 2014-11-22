@@ -54,7 +54,7 @@ class Onepagecrm
      }.merge op_headers
   end
 
-  # Creates the auth token for the X-OnePageCRM-Auth header 
+  # Creates the auth token for the X-OnePageCRM-Auth header
   def create_auth_token(http_method, request_url, request_body, timestamp)
     request_url_hash = Digest::SHA1.hexdigest request_url
     request_body_hash = Digest::SHA1.hexdigest request_body.to_json
