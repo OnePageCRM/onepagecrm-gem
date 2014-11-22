@@ -7,7 +7,7 @@ require 'net/http'
 require 'openssl'
 require 'base64'
 require 'json'
-
+require 'uri'
 
 group :test do
   gem 'json_spec'
