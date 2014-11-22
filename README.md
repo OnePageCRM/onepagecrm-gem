@@ -1,4 +1,7 @@
 [![Code Climate](https://codeclimate.com/github/peterOnePageCRM/onepagecrm-gem/badges/gpa.svg)](https://codeclimate.com/github/peterOnePageCRM/onepagecrm-gem)
+
+[![Test Coverage](https://codeclimate.com/github/peterOnePageCRM/onepagecrm-gem/badges/coverage.svg)](https://codeclimate.com/github/peterOnePageCRM/onepagecrm-gem)
+
 # Onepagecrm
 
 TODO: Write a gem description

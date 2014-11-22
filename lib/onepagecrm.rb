@@ -1,6 +1,6 @@
 require 'onepagecrm/version'
 
-class OnePageCRM
+class Onepagecrm
   def initialize(login = nil, password = nil)
     @url = 'http://local.onepagecrm.com/api/v3/'
     scheme = URI.parse(@url).scheme

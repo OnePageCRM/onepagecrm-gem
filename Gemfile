@@ -8,5 +8,8 @@ require 'openssl'
 require 'base64'
 require 'json'
 
-gem 'json_spec'
-gem 'pry'
+
+group :test do
+  gem 'json_spec'
+  gem "codeclimate-test-reporter", require: false
+end
