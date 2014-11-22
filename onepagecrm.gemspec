@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Onepagecrm::VERSION
   spec.authors       = ['Peter Armstrong']
   spec.email         = ['peter@onepagecrm.com']
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Basic Gem for OnePageCRM.}
+  spec.description   = %q{Basic Gem for OnePageCRM.}
   spec.homepage      = ''
   spec.license       = 'MIT'
 
