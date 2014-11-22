@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['peter@onepagecrm.com']
   spec.summary       = %q{Basic Gem for OnePageCRM.}
   spec.description   = %q{Basic Gem for OnePageCRM.}
-  spec.homepage      = ''
+  spec.homepage      = 'developer.onepagecrm.com'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -23,4 +23,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'json_spec'
   spec.add_development_dependency 'codeclimate-test-reporter'
+  spec.add_development_dependency 'pry'
 end

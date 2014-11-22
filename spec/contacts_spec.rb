@@ -1,11 +1,12 @@
 require 'spec_helper'
 require 'json_spec'
+require 'pry'
 
 describe Onepagecrm do
   subject { Onepagecrm.new(TEST_CONFIG['login'], TEST_CONFIG['password']) }
 
-  describe '#create_contact' do
-    it 'creates a new contact' do
+  describe '#contact' do
+    it 'creates, gets, updates and deletes a contact' do
       new_contact_details = ({
         'first_name' => 'yes',
         'last_name' => 'address',
@@ -31,7 +32,7 @@ describe Onepagecrm do
 
       new_contact = subject.post('contacts.json', new_contact_details)['data']
       new_contact_id = new_contact['contact']['id']
-      got_deets = subject.get("contacts/#{new_contact_id}.json")['data']['contact']
+      got_deets = subject.get("contacts/#{new_contact_id}.json?search=yes")['data']['contact']
       expect(got_deets['first_name']).to eq(new_contact_details['first_name'])
 
       details_without_address = new_contact_details.reject { |k| k == 'address_list' }
@@ -44,6 +45,12 @@ describe Onepagecrm do
       address = got_deets['address_list'][0]
       expect(address['city']).to eq 'San Francisco'
       expect(address['state']).to eq 'CA'
+
+
+      subject.put("contacts/#{new_contact_id}.json", { 'partial' => true,
+                                                       'first_name' => 'Pat' })
+      got_deets = subject.get("contacts/#{new_contact_id}.json")['data']['contact']
+      expect(got_deets['first_name']).to eq 'Pat'
 
       # delete contact
       subject.delete("contacts/#{new_contact_id}.json")
