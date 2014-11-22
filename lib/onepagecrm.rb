@@ -2,7 +2,7 @@ require 'onepagecrm/version'
 
 class Onepagecrm
   def initialize(login = nil, password = nil)
-    @url = 'http://local.onepagecrm.com/api/v3/'
+    @url = 'https://app.onepagecrm.com/api/v3/'
     scheme = URI.parse(@url).scheme
     if scheme == 'https'
       @use_ssl = true
