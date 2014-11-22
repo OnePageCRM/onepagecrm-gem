@@ -1,4 +1,9 @@
 require 'onepagecrm/version'
+require 'net/http'
+require 'openssl'
+require 'base64'
+require 'json'
+require 'uri'
 
 class Onepagecrm
   def initialize(login = nil, password = nil)
