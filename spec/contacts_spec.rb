@@ -46,7 +46,6 @@ describe Onepagecrm do
       expect(address['city']).to eq 'San Francisco'
       expect(address['state']).to eq 'CA'
 
-
       subject.put("contacts/#{new_contact_id}.json", { 'partial' => true,
                                                        'first_name' => 'Pat' })
       got_deets = subject.get("contacts/#{new_contact_id}.json")['data']['contact']

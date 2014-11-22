@@ -22,11 +22,8 @@ class Onepagecrm
   # Send GET request
   def get(method, params = {})
     url = URI.parse(@url + method)
-
     req = Net::HTTP::Get.new(url.request_uri)
-
     add_auth_headers(req, 'GET', method, params)
-
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     result = http.request(req).body
@@ -36,7 +33,6 @@ class Onepagecrm
     # Send DELETE request
   def delete(method, params = {})
     url = URI.parse(@url + method)
-
     req = Net::HTTP::Delete.new(url.request_uri)
     add_auth_headers(req, 'DELETE', method, params)
     http = Net::HTTP.new(url.host, url.port)
@@ -51,9 +47,7 @@ class Onepagecrm
     req = Net::HTTP::Post.new(url.path)
     req.body = params.to_json
     req.add_field('Content-Type', 'application/json; charset=utf-8')
-
     add_auth_headers(req, 'POST', method, params)
-
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     result = http.request(req).body
@@ -67,7 +61,6 @@ class Onepagecrm
     req.body = params.to_json
     req.add_field('Content-Type', 'application/json; charset=utf-8')
     add_auth_headers(req, 'PUT', method, params)
-
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     result = http.request(req).body
@@ -84,15 +77,15 @@ class Onepagecrm
 
     # puts url_to_sign
     timestamp = Time.now.to_i.to_s
-
     token = create_token(timestamp, http_method, url_to_sign, params)
 
     req.add_field('X-OnePageCRM-UID', @uid)
     req.add_field('X-OnePageCRM-TS', timestamp)
     req.add_field('X-OnePageCRM-Auth', token)
     req.add_field('X-OnePageCRM-Source', 'lead_clip_chrome')
- end
+  end
 
+  # Creates the token for X-OnePageCRM-Auth
   def create_token(timestamp, request_type, request_url, request_body)
     request_url_hash = Digest::SHA1.hexdigest request_url
     request_body_hash = Digest::SHA1.hexdigest request_body.to_json

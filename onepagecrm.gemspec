@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['peter@onepagecrm.com']
   spec.summary       = %q{Basic Gem for OnePageCRM.}
   spec.description   = %q{Basic Gem for OnePageCRM.}
-  spec.homepage      = 'developer.onepagecrm.com'
+  spec.homepage      = 'http://developer.onepagecrm.com'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
