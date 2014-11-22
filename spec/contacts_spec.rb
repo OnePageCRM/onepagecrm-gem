@@ -23,9 +23,9 @@ describe OnePageCRM do
           'value' => 'lsdkiteboarding.com' }],
         'background' => 'BACKGROUND',
         'job_title' => 'JOBTITLE',
-        'address_list'=> [
-          'city'=> 'San Francisco',
-          'state'=> 'CA'
+        'address_list' => [
+          'city' => 'San Francisco',
+          'state' => 'CA'
         ]
       })
 
@@ -36,7 +36,7 @@ describe OnePageCRM do
 
       details_without_address = new_contact_details.reject { |k| k == 'address_list' }
 
-      details_without_address.each do |k, v|
+      details_without_address.each do |k, _v|
         expect(got_deets[k]).to eq(new_contact_details[k])
       end
 
@@ -46,10 +46,9 @@ describe OnePageCRM do
       expect(address['state']).to eq 'CA'
 
       # delete contact
-      subject.delete("contacts/#{new_contact_id}.json")    
+      subject.delete("contacts/#{new_contact_id}.json")
     end
   end
-
 
 end
 
@@ -149,7 +148,6 @@ end
 #     response = subject.post('contacts.json', new_contact_details)
 #     expect(response['status']).to be 400
 #   end
-
 
 #   it 'should create and update a new contact with full address' do
 #     new_contact_details = ({
