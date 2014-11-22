@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'json_spec'
 
 describe Onepagecrm do
-  subject { Onepagecrm.new('login@example.com', 'password') }
+  subject { Onepagecrm.new(TEST_CONFIG['login'], TEST_CONFIG['password']) }
 
   describe '#create_contact' do
     it 'creates a new contact' do

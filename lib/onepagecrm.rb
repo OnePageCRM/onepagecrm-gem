@@ -3,12 +3,6 @@ require 'onepagecrm/version'
 class Onepagecrm
   def initialize(login = nil, password = nil)
     @url = 'https://app.onepagecrm.com/api/v3/'
-    scheme = URI.parse(@url).scheme
-    if scheme == 'https'
-      @use_ssl = true
-    else
-      @use_ssl = false
-    end
     @login = login
     @password = password
     log_in
@@ -44,7 +38,7 @@ class Onepagecrm
     add_auth_headers(req, 'GET', method, params)
 
     http = Net::HTTP.new(url.host, url.port)
-    http.use_ssl = @use_ssl
+    http.use_ssl = true
     result = http.request(req).body
     JSON.parse result
     end
@@ -59,7 +53,7 @@ class Onepagecrm
     add_auth_headers(req, 'POST', method, params)
 
     http = Net::HTTP.new(url.host, url.port)
-    http.use_ssl = @use_ssl
+    http.use_ssl = true
     result = http.request(req).body
     JSON.parse result
   end
@@ -73,7 +67,7 @@ class Onepagecrm
     add_auth_headers(req, 'PUT', method, params)
 
     http = Net::HTTP.new(url.host, url.port)
-    http.use_ssl = @use_ssl
+    http.use_ssl = true
     result = http.request(req).body
     JSON.parse result
   end
@@ -90,7 +84,7 @@ class Onepagecrm
     req = Net::HTTP::Delete.new(url.request_uri)
     add_auth_headers(req, 'DELETE', method, params)
     http = Net::HTTP.new(url.host, url.port)
-    http.use_ssl = @use_ssl
+    http.use_ssl = true
     result = http.request(req).body
     JSON.parse result
     end
