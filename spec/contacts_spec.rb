@@ -6,7 +6,7 @@ require 'awesome_print'
 describe Onepagecrm do
   subject { Onepagecrm.new(TEST_CONFIG['login'], TEST_CONFIG['password']) }
 
-  describe '#contact' do
+  describe '#contacts.json' do
     it 'creates, gets, updates and deletes a contact' do
 
       contacts = subject.get('contacts.json')
@@ -58,5 +58,4 @@ describe Onepagecrm do
       subject.delete("contacts/#{new_contact_id}.json")
     end
   end
-
 end
