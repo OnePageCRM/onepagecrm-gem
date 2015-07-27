@@ -2,9 +2,11 @@
 
 [![Test Coverage](https://codeclimate.com/github/peterOnePageCRM/onepagecrm-gem/badges/coverage.svg)](https://codeclimate.com/github/peterOnePageCRM/onepagecrm-gem)
 
-# Onepagecrm
+# OnePageCRM
 
-TODO: Write a gem description
+This gem is a basic wrapper around the OnePageCRM API. 
+It does not abstract all API calls to ruby methods on the gem object but simply gives the `GET`, `POST`, `PUT` and `DELETE` methods.
+The gem handles all the authentication with the OnePageCRM API.
 
 ## Installation
 
@@ -24,7 +26,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
 
 ## Contributing
 

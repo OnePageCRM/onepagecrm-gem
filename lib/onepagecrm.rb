@@ -4,7 +4,7 @@ require 'json'
 require 'faraday'
 
 # OnePageCRM API Client Object
-class Onepagecrm
+class OnePageCRM
   def initialize(login = nil, password = nil)
     @url = 'https://app.onepagecrm.com/api/v3/'
     @conn = Faraday.new(url: @url)
@@ -50,7 +50,8 @@ class Onepagecrm
     token = create_auth_token(http_method, url, parameters, timestamp)
     { 'X-OnePageCRM-UID' => @uid,
       'X-OnePageCRM-TS' => timestamp,
-      'X-OnePageCRM-Auth' => token
+      'X-OnePageCRM-Auth' => token,
+      'X-OnePageCRM-Source' => 'ruby_gem'
      }.merge op_headers
   end
 
